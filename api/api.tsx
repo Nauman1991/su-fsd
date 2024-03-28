@@ -1,6 +1,7 @@
 'use server';
 
 import { promises as fs } from 'fs';
+import type { GetServerSideProps } from 'next';
 
 export async function parseDocument() {
   //Read document
@@ -10,7 +11,8 @@ export async function parseDocument() {
     success: false,
   };
   try {
-    const file = await fs.readFile(process.cwd() + '/api/data.csv', 'utf8');
+    // const file = await fs.readFile(process.cwd() + '/api/data.csv', 'utf8');
+    const file = await fs.readFile('api/data.csv', 'utf8');
     let stringData = file.split(',');
     let data = stringData[0].split('\n');
 
