@@ -23,7 +23,7 @@ export async function parseDocument() {
     return response;
   } catch (error) {
     console.log(error);
-    response.data = `2023-06-25 11:00;1abc.txt
+    response.data = JSON.stringify(`2023-06-25 11:00;1abc.txt
     2023-06-25 12:00;abc.txt
     2023-06-25 13:00;01abc.txt
     2023-06-25 14:00;0010abc.txt
@@ -33,7 +33,7 @@ export async function parseDocument() {
     2023-06-25 18:00;002-abc.txt
     2023-06-25 19:00;cba.txt
     2023-06-25 20:00;abc010.txt
-    2023-06-25 21:00;abc1.txt`;
+    2023-06-25 21:00;abc1.txt`);
     response.status = '200';
     response.success = true;
     return response;
