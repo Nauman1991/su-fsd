@@ -19,6 +19,7 @@ export async function parseDocument() {
     response.success = true;
     return response;
   } catch (error) {
+    console.log(error);
     response.data = 'Internal Server Error';
     response.status = '500';
     response.success = false;
